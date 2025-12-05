@@ -35,6 +35,7 @@ def part_1(grid: list[list[str]]) -> int:
                 result += 1
     return result
 
+
 def part_2(grid: list[list[str]], previous_num_removed: int = 0) -> int:
     """Dynamic programming solution"""
     num_removed: int = 0
