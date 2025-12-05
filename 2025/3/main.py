@@ -39,7 +39,7 @@ def solve(puzzle_input: list[list[int]], num_batteries: int):
 
 
 if __name__ == "__main__":
-    file_path: str = "/Users/bassil/dev/advent_of_code/2025/3/input.txt"
+    file_path: str = "/Users/bassil/dev/aoc/2025/3/input.txt"
     puzzle_input: list[list[int]] = parse_input(file_path)
     print("part_1:", solve(puzzle_input, 2))
     print("part_2:", solve(puzzle_input, 12))

@@ -50,7 +50,7 @@ def solve(input: list[str], next_method: callable) -> int:
 
 
 if __name__ == "__main__":
-    file_path: str = "/Users/bassil/dev/advent_of_code/2025/1/input.txt"
+    file_path: str = "/Users/bassil/dev/aoc/2025/1/input.txt"
     puzzle_input: list[str] = parse_input(file_path)
     print("part_1:", solve(puzzle_input, calculate_next_part_1))
     print("part_2:", solve(puzzle_input, calculate_next_part_2))

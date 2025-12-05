@@ -68,7 +68,7 @@ def solve(puzzle_input: list[list[int, int]], is_invalid: callable) -> int:
 
 
 if __name__ == "__main__":
-    file_path: str = "/Users/bassil/dev/advent_of_code/2025/2/input.txt"
+    file_path: str = "/Users/bassil/dev/aoc/2025/2/input.txt"
     puzzle_input: list[list[int, int]] = parse_input(file_path)
     print("part_1:", solve(puzzle_input, is_invalid_part_1))
     print("part_2:", solve(puzzle_input, is_invalid_part_2))
