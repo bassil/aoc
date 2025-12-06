@@ -1,15 +1,7 @@
 import math
 
-def parse_input(file_name: str) -> list[list[str]]:
-    with open(file_name) as text_io_wrapper:
-        file_content: list[str] = text_io_wrapper.read().split("\n")
-    results: list[list[str]] = []
-    for line in file_content:
-        results.append(line.split())
-    return results
 
-
-def parse_input_with_padding_preserved(file_name: str) -> tuple[list[list[str]], list[str]]:
+def parse_input(file_name: str) -> tuple[list[list[str]], list[str]]:
     results: list[list[str]] = []
     with open(file_name) as text_io_wrapper:
         file_content: list[str] = text_io_wrapper.read().split("\n")
@@ -69,20 +61,7 @@ def get_values_part_2(puzzle_input: list[list[str]], num_rows, column) -> list[i
     return results
 
 
-def part_1(puzzle_input: list[list[str]], values_getter) -> int:
-    result: int = 0
-    operations: list[str] = puzzle_input[-1]
-    num_columns: int = len(puzzle_input[0])
-    num_rows: int = len(puzzle_input) - 1
-    for column in range(num_columns):
-        operation: str = operations[column]
-        values = values_getter(puzzle_input, num_rows, column)
-        computation: int = perform_computation(values, operation)
-        result += computation
-    return result
-
-
-def part_2(puzzle_input: list[list[str]], operations: list[str], values_getter) -> int:
+def solve(puzzle_input: list[list[str]], operations: list[str], values_getter) -> int:
     result: int = 0
     num_columns: int = len(puzzle_input[0])
     num_rows: int = len(puzzle_input)
@@ -93,10 +72,10 @@ def part_2(puzzle_input: list[list[str]], operations: list[str], values_getter) 
         result += computation
     return result
 
+
 if __name__ == "__main__":
     file_name: str = "D:\\dev\\aoc\\2025\\6\\input.txt"
-    # puzzle_input = parse_input(file_name)
-    # # print("part_1:", part_1(puzzle_input, get_values_part_1))
-    puzzle_input, operations = parse_input_with_padding_preserved(file_name)
-    print("part_2:", part_2(puzzle_input, operations, get_values_part_2))
+    puzzle_input, operations = parse_input(file_name)
+    print("part_1:", solve(puzzle_input, operations, get_values_part_1))
+    print("part_2:", solve(puzzle_input, operations, get_values_part_2))
     
