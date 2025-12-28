@@ -22,3 +22,4 @@ def parse_input(file_name: str) -> str:
 if __name__ == "__main__":
     file_name = "D:\\dev\\aoc\\2025\\10\\sample.txt"
     puzzle_input = parse_input(file_name)
+    

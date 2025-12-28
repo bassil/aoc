@@ -7,7 +7,7 @@ class Cell:
         self.y: int = int(coordinates[1])
     
     def __repr__(self) -> str:
-        return f"Cell: (x: {self.x},\ty: {self.y})"
+        return f"Cell: (x: {self.x}, y: {self.y})"
 
     def area(self, other: Cell) -> int:
         return abs(self.x - other.x + 1) * abs(self.y - other.y + 1)
@@ -55,6 +55,7 @@ def part_2(puzzle_input: list[Cell]) -> int:
 
 
 if __name__ == "__main__":
-    file_name = "D:\\dev\\aoc\\2025\\9\\input.txt"
+    file_name = "D:\\dev\\aoc\\2025\\09\\sample.txt"
     puzzle_input = parse_input(file_name)
     print("part 1:", part_1(puzzle_input))
+    print("part 2:", part_2(puzzle_input))
